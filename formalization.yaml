@@ -1,0 +1,50 @@
+version: v0.4
+project:
+  name: "P25 irregular spanning subgraphs — partial Lean development"
+  description: "Concrete graph histograms, threshold subgraphs and edge-move lattice invariants toward arXiv:2607.06465v1. The full polynomial-range exact-realization Theorem 2.1 and balanced-subgraph consequence remain unproved."
+  authors: ["Quanyu Tang"]
+  responsible_maintainers: ["Quanyu Tang"]
+  license: Apache-2.0
+classification:
+  arxiv: [math.CO]
+  msc2020: [05C07, 05D40, 05C35]
+sources:
+  - title: "Irregular subgraph in a regular graph"
+    authors: ["Tianyue Cao", "Quanyu Tang", "Hehui Wu"]
+    type: paper
+    id: "arXiv:2607.06465v1"
+    location: "https://arxiv.org/abs/2607.06465v1"
+    relationship: formalizes
+    author_endorsement: not-contacted
+    note: "Partial foundations only; source authors have not reviewed the Lean code."
+status:
+  scope: "PARTIAL. Ten supporting results verified; main exact realization, range and parity-compatible consequence unproved."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: "Doubao Work"
+      tool_setup: "Lean/Lake/mathlib/GitHub CLI; model identifier not recorded."
+  notes: "AI-assisted source reading, theorem search, code generation and repair; no independent or human code audit."
+review:
+  status: self-assessed
+  reviewers: []
+  notes: "Same-assistant source/definition correspondence check plus Lean kernel and explicit axiom audit. Not a main theorem audit."
+fidelity:
+  divergences: "Main theorem absent rather than weakened; move invariants do not certify bounded-cost generation or graph realization."
+alignment:
+  namespace: IrregularSubgraph
+  statements:
+    - source: "Degree-count conventions and handshaking identity"
+      lean: IrregularSubgraph.degreeCount_weighted_sum
+      module: IrregularSubgraph.Basic
+      status: proved-supporting
+    - source: "Edge-move lattice invariants"
+      lean: IrregularSubgraph.move_combination_weighted_sum
+      module: IrregularSubgraph.Basic
+      status: proved-supporting
+    - source: "Theorem 2.1 and its final consequence"
+      status: not-formalized

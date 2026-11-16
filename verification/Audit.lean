@@ -1,0 +1,12 @@
+module
+public import IrregularSubgraph
+#print axioms IrregularSubgraph.thresholdGraph_le
+#print axioms IrregularSubgraph.edgeMove_sum
+#print axioms IrregularSubgraph.edgeMove_weighted_sum
+#print axioms IrregularSubgraph.edgeMove_comm
+#print axioms IrregularSubgraph.paired_difference
+#print axioms IrregularSubgraph.move_combination_sum
+#print axioms IrregularSubgraph.move_combination_weighted_sum
+#print axioms IrregularSubgraph.degree_le_regular
+#print axioms IrregularSubgraph.degreeCount_sum
+#print axioms IrregularSubgraph.degreeCount_weighted_sum
